@@ -1,0 +1,103 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Chat Interface</title>  
+    <link rel="stylesheet" href="styles.css">  
+</head>  
+<body>  
+
+<div class="header">  
+    <h1>What's Up</h1>  
+    <img src="./Vtop_Profile.jpg" alt="Profile" id="profile-pic" onclick="dpProfile('./Vtop_Profile.jpg', event, false)">  
+</div>  
+
+<ul class="contact-list" id="contact-list">  
+    <li class="contact">  
+        <img src="./Sunrisers.jpg" alt="Profile" class="contact-img" onclick="viewProfile('./Sunrisers.jpg', event, true)">  
+        <div class="contact-info">  
+            <div class="contact-name">IPL</div>  
+            <div class="last-message">Play with Fire</div>  
+        </div>  
+    </li>  
+    <li class="contact">  
+        <img src="./Vtop_Profile.jpg" alt="Profile" class="contact-img" onclick="viewProfile('./Vtop_Profile.jpg', event, true)">  
+        <div class="contact-info">  
+            <div class="contact-name">Yourself</div>  
+            <div class="last-message">When  I will play?</div>  
+        </div>  
+    </li>  
+    <li class="contact">  
+        <img src="T20.jpeg" alt="Profile" class="contact-img" onclick="viewProfile('T20.jpeg', event, true)">  
+        <div class="contact-info">  
+            <div class="contact-name">T20</div>  
+            <div class="last-message">We can play 20 overs</div>  
+        </div>  
+    </li>  
+    <li class="contact">  
+        <img src="BBL.jpeg" alt="Profile" class="contact-img" onclick="viewProfile('./BBL.jpeg', event, true)">  
+        <div class="contact-info">  
+            <div class="contact-name">BBL</div>  
+            <div class="last-message">Come and play in Australia</div>  
+        </div>  
+    </li>  
+    <li class="contact">  
+        <img src="ODI.jpg" alt="Profile" class="contact-img" onclick="viewProfile('ODI.jpg', event, true)">  
+        <div class="contact-info">  
+            <div class="contact-name">ODI</div>  
+            <div class="last-message">One day International</div>  
+        </div>  
+    </li>  
+    <li class="contact">  
+        <img src="test.jpg" alt="Profile" class="contact-img" onclick="viewProfile('test.jpg', event, true)">  
+        <div class="contact-info">  
+            <div class="contact-name">Test</div>  
+            <div class="last-message">play entire day</div>  
+        </div>  
+    </li>  
+    <li class="contact">  
+        <img src="Champions.jpg" alt="Profile" class="contact-img" onclick="viewProfile('Champions.jpg', event, true)">  
+        <div class="contact-info">  
+            <div class="contact-name">Champions</div>  
+            <div class="last-message">Champions can play</div>  
+        </div>  
+    </li>  
+</ul>  
+
+<div class="chat-input-container" style="display: none;">  
+    <div class="emoji-picker">  
+        <span onclick="insertEmoji('#1F60A')">#1F60A</span>  
+        <span onclick="insertEmoji('#1F602')">#1F602</span>  
+        <span onclick="insertEmoji('#1F497')">#1F497</span>  
+        <span onclick="insertEmoji('#1F44D')">#1F44D</span>  
+    </div>  
+    <input type="text" id="chat-input" placeholder="Type a message..." onkeypress="handleEnter(event)">  
+    <button onclick="sendMessage()">➤</button>  
+</div>  
+
+<div class="overlay" id="overlay" onclick="closeProfilePopup()"></div>  
+<div class="overlay" id="overlay-dp" onclick="closeProfilePopup()"></div>  
+<div class="profile-popup" id="profile-popup">  
+    <img src="" alt="Profile" id="popup-profile-pic">  
+    <div class="popup-buttons" id="popup-buttons">  
+        <button onclick="startChat()" id="chat-button">Message</button>  
+        <button onclick="startCall()">Call</button>  
+    </div>  
+</div>  
+<div class="profile-popup" id="dp-popup">  
+    <img src="" alt="Profile" id="dp-profile-pic">  
+    <div class="popup-buttons" id="dp-buttons">  
+        <button onclick="">Edit</button>  
+        <button onclick="">Logout</button>  
+    </div>  
+</div>  
+<div class="call-screen" id="call-screen">  
+    <h2>Calling...</h2>  
+    <img src="" alt="Call Profile" id="call-profile-pic">  
+    <button onclick="endCall()" style="color: green;">End Call</button>  
+</div>  
+
+<script src="script.js"></script>  
+</body>  
+</html>

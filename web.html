@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freelance Trainer Website</title>
+<style>
+/* Basic Styling */
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin: 0;
+padding: 0;
+background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+color: #333;
+}
+
+/* Navigation Bar Styling */
+nav {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 70px;
+background-color: #34495e;
+padding: 10px 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+list-style: none;
+display: flex;
+margin: 10px auto;
+padding: 0;
+gap: 20px;
+}
+
+nav ul li {
+display: inline-block;
+}
+
+nav ul li a {
+color: white;
+text-decoration: none;
+padding: 12px 20px;
+display: block;
+font-size: 16px;
+gap: 10px;
+transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+background-color: #2ecc71;
+color: white;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Page Sections */
+.page {
+display: none;
+padding: 20px;
+margin: 20px auto;
+max-width: 1000px;
+background-color: white;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+}
+
+.page h1 {
+font-size: 2rem;
+color: #2c3e50;
+text-align: center;
+margin-bottom: 30px;
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+
+.page p {
+font-size: 18px;
+line-height: 1.6;
+color: #555;
+margin-bottom: 20px;
+text-align: justify;
+
+}
+
+/* Video Gallery */
+.video-gallery {
+display: flex;
+justify-content: space-between;
+}
+
+.video-gallery iframe {
+width: 48%;
+height: 300px;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Courses Section */
+ul {
+list-style-type: none;
+padding-left: 0;
+display: flex;
+flex-direction: row;
+gap: 40px;
+}
+
+ul li a {
+text-decoration: none;
+background-color: #e74c3c;
+
+color: white;
+padding: 10px 20px;
+border-radius: 5px;
+transition: background 0.3s;
+}
+
+ul li a:hover {
+background-color: #c0392b;
+}
+
+/* Testimonials */
+.testimonials blockquote {
+font-style: italic;
+background-color: #ecf0f1;
+padding: 20px;
+border-left: 5px solid #2980b9;
+margin-bottom: 30px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ */
+.faq-item h2 {
+cursor: pointer;
+font-size: 1.3rem;
+padding: 10px;
+background-color: #3498db;
+color: white;
+
+border-radius: 5px;
+margin-bottom: 5px;
+transition: background 0.3s;
+}
+
+.faq-item h2:hover {
+background-color: #2980b9;
+}
+
+.faq-item p {
+display: none;
+background-color: #f9f9f9;
+padding: 10px;
+border-left: 5px solid #3498db;
+margin-bottom: 15px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Blog Page Styles */
+.blog-post {
+margin-bottom: 20px;
+}
+
+.blog-post h2 {
+cursor: pointer;
+font-size: 1.5rem;
+color: #34495e;
+
+padding: 15px;
+background-color: #ecf0f1;
+border-radius: 5px;
+transition: background 0.3s;
+}
+
+.blog-post h2:hover {
+background-color: #bdc3c7;
+}
+
+.blog-post .description {
+display: none;
+padding: 15px;
+background-color: #ffffff;
+border-left: 5px solid #2980b9;
+border-radius: 0 5px 5px 5px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+margin-top: -5px;
+}
+
+/* Footer */
+footer {
+text-align: center;
+padding: 10px;
+background-color: #34495e;
+color: white;
+position: fixed;
+
+width: 100%;
+bottom: 0;
+}
+
+/* Active Page Styling */
+.page.active {
+display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.video-gallery {
+flex-direction: column;
+align-items: center;
+}
+
+.video-gallery iframe {
+width: 90%;
+margin-bottom: 20px;
+}
+
+ul li a {
+padding: 10px;
+display: block;
+text-align: center;
+}
+
+nav ul {
+flex-direction: column;
+align-items: center;
+}
+}
+</style>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav>
+<ul>
+<li><a href="#" onclick="showPage('profile')">Profile</a></li>
+<li><a href="#" onclick="showPage('courses')">Courses</a></li>
+<li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
+<li><a href="#" onclick="showPage('about')">About Me</a></li>
+<li><a href="#" onclick="showPage('testimonials')">Testimonials</a></li>
+<li><a href="#" onclick="showPage('blog')">Blog</a></li>
+<li><a href="#" onclick="showPage('faq')">FAQ</a></li>
+</ul>
+</nav>
+
+<!-- Content Sections -->
+<div id="profile" class="page">
+<h1>Trainer Profile</h1>
+<p>Welcome to my profile! Here are some of my training sessions.</p>
+<div class="video-gallery">
+<!-- Embedded YouTube Videos -->
+
+<iframe src="https://www.youtube.com/embed/gMmTpoiITM4" title="Training Session 1"
+allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/XCHP-qtdLps" title="Training Session 2"
+allowfullscreen></iframe>
+</div>
+</div>
+
+<div id="courses" class="page">
+<h1>Available Courses</h1>
+<ul>
+<li>Course 1 - <a href="#" onclick="registerCourse('Course 1')">Register</a></li>
+<li>Course 2 - <a href="#" onclick="registerCourse('Course 2')">Register</a></li>
+</ul>
+<p id="registrationMessage" style="font-size: 1.2rem; color: green;"></p>
+</div>
+
+<div id="contact" class="page">
+<h1>Contact Us</h1>
+<p><strong>Email:</strong> sivamanin2004@gmail.com</p>
+<p><strong>Phone:</strong>9848022338</p>
+<p><strong>Location:</strong> Street: Jublihills , hyderabad<br>
+
+City:Telangana<br>
+
+
+Phone number: 9853535783<br>
+
+Zip code: 64857<br>
+
+Country calling code: +9<br>
+
+Country: India</p>
+</div>
+
+<div id="about" class="page">
+<h1>About Me</h1>
+<p><strong>Welcome! I'm Sivamani Nukapothula</strong></p>
+<h2>About Me</h2>  
+
+<p>Hello! My name is <strong>Sivamani</strong>, and I am currently pursuing my studies at <strong>VIT-AP University</strong>. I have a strong passion for technology and a keen interest in web development. With a solid foundation in <strong>Java</strong> and a growing expertise in full stack development, I am dedicated to creating dynamic and user-friendly web applications.</p>  
+
+<p>Throughout my academic journey, I have honed my skills in both front-end and back-end development. I enjoy working with various technologies and frameworks to bring ideas to life. Whether it's crafting responsive user interfaces or building robust server-side applications, I strive to deliver high-quality solutions that meet user needs.</p>  
+
+<p>I am always eager to learn and explore new tools and technologies in the ever-evolving field of web development. My goal is to become a proficient full stack developer, capable of tackling complex challenges and contributing to innovative projects.</p>  
+
+<p>When I'm not coding, you can find me exploring new tech trends, participating in hackathons, or collaborating with fellow developers on exciting projects. I believe in the power of teamwork and continuous learning, and I am excited about the opportunities that lie ahead.</p>  
+
+<p>Thank you for visiting my page! Feel free to reach out if you’d like to connect or collaborate.</p>
+</div>
+
+<div id="testimonials" class="page">
+<h1>Testimonials</h1>
+
+<blockquote>"An exceptional trainer with deep insights into software
+engineering!"</blockquote>
+<blockquote>"The hands-on approach made learning so much more effective!"</blockquote>
+<blockquote>"Dinesh's expertise helped me transition into a full-time software
+engineer."</blockquote>
+</div>
+
+<div id="blog" class="page">
+<h1>Blog</h1>
+<!-- Blog Post 1 -->
+<div class="blog-post">
+<h2 onclick="toggleDescription(this)">1. Mastering Software Engineering Fundamentals: A
+Strong Foundation for Success</h2>
+<p class="description">In this post, I’ll guide you through the essential building blocks of
+software engineering. Whether you're just starting out or looking to solidify your foundation,
+understanding key concepts like algorithms, data structures, and software development principles
+is crucial. With over 10 years of industry experience, I’ll break down these concepts in a way
+that’s easy to grasp and apply to real-world scenarios. Let’s strengthen your foundation to set you
+up for success!</p>
+</div>
+
+<!-- Blog Post 2 -->
+<div class="blog-post">
+<h2 onclick="toggleDescription(this)">2. Navigating the Latest Trends in Software
+Development: What You Need to Know</h2>
+<p class="description">The software development landscape is constantly evolving. In this
+blog post, I’ll explore the most recent trends and technologies that are shaping the future of the
+industry, from DevOps to AI-driven development. I’ll share my insights on how to stay ahead,
+adapt quickly, and make smart choices in a rapidly changing environment. Let’s discover what’s
+trending and how you can leverage these innovations in your career.</p>
+</div>
+
+<!-- Blog Post 3 -->
+<div class="blog-post">
+<h2 onclick="toggleDescription(this)">3. Top 5 Programming Languages to Learn in
+2024</h2>
+<p class="description">With new programming languages emerging all the time, it can be
+challenging to know where to focus your learning efforts. In this post, I’ll highlight the top 5
+programming languages that are in high demand and explain why mastering these can open
+doors to exciting opportunities in the tech world. Whether you’re into web development, data
+science, or systems programming, I’ll help you make informed decisions on where to invest your
+time.</p>
+</div>
+
+<!-- Blog Post 4 -->
+<div class="blog-post">
+<h2 onclick="toggleDescription(this)">4. From Concept to Code: Understanding the
+Software Development Life Cycle</h2>
+<p class="description">Ever wondered how software goes from an idea to a fully functioning
+application? In this blog post, I’ll walk you through the complete software development life
+cycle (SDLC), from requirements gathering to testing and deployment. With insights gained
+from over a decade of experience, I’ll provide real-world examples and best practices that will
+help you become more proficient at managing software projects from start to finish.</p>
+</div>
+
+<!-- Blog Post 5 -->
+<div class="blog-post">
+<h2 onclick="toggleDescription(this)">5. Essential Skills for Aspiring Software Engineers:
+Beyond Just Coding</h2>
+<p class="description">Being a successful software engineer is about more than just writing
+great code. In this blog post, I’ll share the crucial non-technical skills that can set you apart in the
+field, including problem-solving, communication, and teamwork. I’ll also dive into how you can
+develop these soft skills to enhance your overall effectiveness as a professional. With my
+
+guidance, you’ll be equipped to navigate the complexities of the software engineering world with
+confidence.</p>
+</div>
+
+<!-- Blog Post 6 -->
+<div class="blog-post">
+<h2 onclick="toggleDescription(this)">6. Building Your Career in Software Engineering:
+My Journey and Tips for Success</h2>
+<p class="description">In this personal blog post, I reflect on my own 10+ year journey in
+software engineering, sharing the challenges, lessons, and milestones that have shaped my career.
+From starting as a beginner to becoming a freelance trainer, I offer practical advice on how to
+grow in this field, including how to keep learning, finding mentors, and overcoming common
+obstacles. Join me as I recount my experiences and provide you with actionable tips for career
+growth.</p>
+</div>
+</div>
+
+<div id="faq" class="page">
+<h1>Frequently Asked Questions</h1>
+<div class="faq-item">
+<h2 onclick="toggleFAQ(this)">What is the best course for beginners?</h2>
+<p>We recommend starting with the basics of web development if you're just starting out. It
+covers HTML, CSS, and JavaScript.</p>
+</div>
+<div class="faq-item">
+<h2 onclick="toggleFAQ(this)">How can I contact you?</h2>
+<p>You can contact me via email at dineshkumarponnada27@gmail.com or by phone at 312-
+936-9047.</p>
+</div>
+</div>
+
+<footer>
+&copy; 2024 Sivamani. All rights reserved.
+</footer>
+
+<!-- JavaScript for Navigation and Toggles -->
+<script>
+function showPage(pageId) {
+const pages = document.querySelectorAll('.page');
+pages.forEach(page => {
+page.classList.remove('active');
+});
+document.getElementById(pageId).classList.add('active');
+}
+
+function toggleDescription(element) {
+const description = element.nextElementSibling;
+const isVisible = description.style.display === 'block';
+
+// Hide all descriptions
+const allDescriptions = document.querySelectorAll('.blog-post .description');
+allDescriptions.forEach(desc => desc.style.display = 'none');
+
+// Toggle the clicked description
+if (!isVisible) {
+description.style.display = 'block';
+}
+
+}
+
+function toggleFAQ(element) {
+const answer = element.nextElementSibling;
+const isVisible = answer.style.display === 'block';
+
+// Hide all answers
+const allAnswers = document.querySelectorAll('.faq-item p');
+allAnswers.forEach(ans => ans.style.display = 'none');
+
+// Toggle the clicked answer
+if (!isVisible) {
+answer.style.display = 'block';
+}
+}
+
+// Register for courses and display message
+function registerCourse(courseName) {
+const registrationMessage = document.getElementById('registrationMessage');
+registrationMessage.textContent = `You have registered for ${courseName}`;
+}
+</script>
+</body>
+</html>

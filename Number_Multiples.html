@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Conditional Statements and Loops</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: aqua;
+        }
+        label{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <marquee><h1 class="text-2xl font-bold">JavaScript Conditional Statements and Loops</h1></marquee>
+    <label for="numberInput" class="block mt-4">Enter a number:</label>
+    <input type="number" id="numberInput" class="border p-2 mt-2" />
+    <button onclick="checkNumber()" class="bg-blue-500 text-white p-2 mt-2">Check Number</button>
+    
+    <h2 class="mt-4">Results:</h2>
+    <p id="result" class="mt-2"></p>
+    <h3 class="mt-4">Multiples:</h3>
+    <ul id="multiplesList" class="mt-2"></ul>
+
+    <script>
+        function checkNumber() {
+            const number = parseInt(document.getElementById('numberInput').value);
+            const resultElement = document.getElementById('result');
+            const multiplesList = document.getElementById('multiplesList');
+            
+            // Clear previous results
+            resultElement.innerHTML = '';
+            multiplesList.innerHTML = '';
+
+            // Conditional statement to check if the number is even or odd
+            if (number % 2 === 0) {
+                resultElement.innerHTML = `${number} is an even number.`;
+            } else {
+                resultElement.innerHTML = `${number} is an odd number.`;
+            }
+
+            // Loop to display the first ten multiples of the number
+            for (let i = 1; i <= 10; i++) {
+                const multiple = number * i;
+                const listItem = document.createElement('li');
+                listItem.textContent = `${number} x ${i} = ${multiple}`;
+                multiplesList.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+</html>

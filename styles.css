@@ -1,0 +1,74 @@
+body {  
+    font-family: Arial, sans-serif;  
+    margin: 0;  
+    padding: 0;  
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shiksha.com%2Funiversity%2Fvit-ap-university-amaravati-52833%2Fcourse-b-tech-in-electronics-and-communication-engineering-embedded-systems-313985&psig=AOvVaw2LT9bcAyqNr_uvm1wBbDXL&ust=1724297416697000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjKwdqShYgDFQAAAAAdAAAAABAY');  
+}  
+
+header {  
+    background-color: #343a40;  
+    color: white;  
+    padding: 20px;  
+}  
+
+header h1 {  
+    margin: 0;  
+}  
+
+nav ul {  
+    list-style: none;  
+    padding: 0;  
+}  
+
+nav ul li {  
+    display: inline;  
+    margin-right: 20px;  
+}  
+
+nav ul li a {  
+    color: white;  
+    text-decoration: none;  
+}  
+
+nav ul li a:hover {  
+    text-decoration: underline;  
+}  
+
+main {  
+    padding: 20px;  
+}  
+
+.menu-item {  
+    border: 1px solid #ced4da;  
+    border-radius: 5px;  
+    padding: 15px;  
+    margin: 10px 0;  
+    background-color: #ffffff;  
+}  
+
+.menu-item h3 {  
+    margin: 0;  
+}  
+
+.menu-item button {  
+    background-color: #28a745;  
+    color: white;  
+    border: none;  
+    padding: 10px;  
+    cursor: pointer;  
+    border-radius: 5px;  
+}  
+
+.menu-item button:hover {  
+    background-color: #218838;  
+}  
+
+footer {  
+    text-align: center;  
+    padding: 10px;  
+    background-color: #343a40;  
+    color: white;  
+    position: relative;  
+    bottom: 0;  
+    width: 100%;  
+}
